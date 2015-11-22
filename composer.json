@@ -16,7 +16,10 @@
   "homepage": "https://github.com/arrilot/laravel-data-anonymization",
   "require": {
     "php": ">=5.5.9",
-    "arrilot/data-anonymization": "~1.0"
+    "arrilot/data-anonymization": "~1.0",
+    "illuminate/support": "5.*",
+    "illuminate/contracts": "5.*",
+    "illuminate/console": "5.*"
   },
   "require-dev": {
     "phpunit/phpunit": "~4.0",
