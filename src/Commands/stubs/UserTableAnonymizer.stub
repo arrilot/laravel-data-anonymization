@@ -2,8 +2,9 @@
 
 use Arrilot\DataAnonymization\Blueprint;
 use Arrilot\LaravelDataAnonymization\AbstractAnonymizer;
+use Faker\Generator as Faker;
 
-class DummyClass extends AbstractAnonymizer
+class UserTableAnonymizer extends AbstractAnonymizer
 {
     /**
      * Run the database anonymization.
@@ -13,7 +14,12 @@ class DummyClass extends AbstractAnonymizer
     public function run()
     {
         $this->table('users', function (Blueprint $table) {
-            // $table->column('name')->replaceWith('John Doe');
+
+            $table->column('email')->replaceWith(function(Faker $faker) {
+                return $faker->unique()->email;
+            });
+
+            $table->column('name')->replaceWith('John Doe');
         });
     }
 }

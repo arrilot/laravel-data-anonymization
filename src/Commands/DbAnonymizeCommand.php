@@ -54,19 +54,27 @@ class DbAnonymizeCommand extends Command
             return;
         }
 
-        $this->getAnonymizer()->run();
+        $coreAnonymizer = $this->getCoreAnonymizer();
+
+        // collect configuration into $coreAnonymizer
+        $this->getAnonymizer($coreAnonymizer)->run();
+
+        // change database
+        $coreAnonymizer->run();
     }
 
     /**
      * Get an anonymizer instance from the container.
      *
+     * @param CoreAnonymizer $coreAnonymizer
+     *
      * @return AbstractAnonymizer
      */
-    protected function getAnonymizer()
+    protected function getAnonymizer($coreAnonymizer)
     {
         $className = $this->input->getOption('class');
 
-        return (new $className($this->getCoreAnonymizer()))->setCommand($this);
+        return (new $className($coreAnonymizer))->setCommand($this);
     }
 
     /**
@@ -77,7 +85,8 @@ class DbAnonymizeCommand extends Command
     protected function getCoreAnonymizer()
     {
         $db = $this->getDatabaseConfiguration($this->input->getOption('database'));
-        $databaseInteractor = new SqlDatabase($db['dsn'], $db['user'], $db['password']);
+
+        $databaseInteractor = new SqlDatabase($db['dsn'], $db['username'], $db['password']);
 
         return new CoreAnonymizer($databaseInteractor);
     }
@@ -97,7 +106,7 @@ class DbAnonymizeCommand extends Command
 
         return [
             'dsn' => "{$connection['driver']}:dbname={$connection['database']};host={$connection['host']};charset={$connection['charset']}",
-            'user' => $connection['user'],
+            'username' => $connection['username'],
             'password' => $connection['password'],
         ];
     }

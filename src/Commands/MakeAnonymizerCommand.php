@@ -79,7 +79,7 @@ class MakeAnonymizerCommand extends GeneratorCommand
      */
     protected function getPath($name)
     {
-        return $this->laravel->databasePath().'/anonymizers/'.$name.'.php';
+        return $this->laravel->databasePath().'/anonymization/'.$name.'.php';
     }
 
     /**

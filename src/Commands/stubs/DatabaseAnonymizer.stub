@@ -1,0 +1,16 @@
+<?php
+
+use Arrilot\LaravelDataAnonymization\AbstractAnonymizer;
+
+class DatabaseAnonymizer extends AbstractAnonymizer
+{
+    /**
+     * Run the database anonymization.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        $this->call(UserTableAnonymizer::class);
+    }
+}
