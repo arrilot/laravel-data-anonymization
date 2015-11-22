@@ -2,7 +2,7 @@
 [![Total Downloads](https://img.shields.io/packagist/dt/arrilot/laravel-data-anonymization.svg?style=flat)](https://packagist.org/packages/Arrilot/laravel-data-anonymization)
 [![Scrutinizer Quality Score](https://scrutinizer-ci.com/g/arrilot/laravel-data-anonymization/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/arrilot/laravel-data-anonymization/)
 
-# Laravel Data Anonymization (WIP)
+# Laravel Data Anonymization
 
 * This is a bridge package for a full integration of `arrilot/data-anonymization` into Laravel framework.
 
@@ -18,11 +18,11 @@
 
 The package is designed to be as much consistent with Laravel built-in seeders as possible.
 
-`php artisan anonymization:install` creates two files.
-
 ### Bootstrapping
 
-1. `database/anonymization/DatabaseAnonymizer.php`
+`php artisan anonymization:install` creates two files:
+
+1) `database/anonymization/DatabaseAnonymizer.php`
 
 ```php
 <?php
@@ -44,7 +44,7 @@ class DatabaseAnonymizer extends AbstractAnonymizer
 
 ```
 
-2. `database/anonymization/UserTableAnonymizer.php`
+2) `database/anonymization/UserTableAnonymizer.php`
 
 ```php
 <?php
