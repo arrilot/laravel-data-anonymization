@@ -46,7 +46,7 @@ class ServiceProvider extends BaseServiceProvider
     protected function registerAnonymizeCommand()
     {
         $this->app->singleton('command.db.anonymize', function ($app) {
-            return new DbAnonymizeCommand($app['db']);
+            return new DbAnonymizeCommand();
         });
 
         $this->commands('command.db.anonymize');
