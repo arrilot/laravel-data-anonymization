@@ -48,10 +48,17 @@ class MakeAnonymizerCommand extends GeneratorCommand
 
         $this->composer = $composer;
     }
-    
+
+    /**
+     * Execute the console command.
+     *
+     * @return void
+     */
     public function handle()
     {
-    	return $this->fire();
+        parent::handle();
+
+        $this->composer->dumpAutoloads();
     }
 
     /**
