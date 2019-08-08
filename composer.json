@@ -34,5 +34,12 @@
     "psr-4": {
       "Arrilot\\Tests\\LaravelDataAnonymization\\": "tests/"
     }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Arrilot\\LaravelDataAnonymization\\ServiceProvider"
+      ]
+    }
   }
 }

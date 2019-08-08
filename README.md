@@ -10,7 +10,7 @@
 
 1. ```composer require arrilot/laravel-data-anonymization```
 
-2. Add `Arrilot\LaravelDataAnonymization\ServiceProvider::class` to your `config/app.php`
+2. Add `Arrilot\LaravelDataAnonymization\ServiceProvider::class` to your `config/app.php` (Laravel 5.4 and below only)
 
 3. `php artisan anonymization:install`
 
