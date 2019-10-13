@@ -5,6 +5,7 @@ namespace Arrilot\LaravelDataAnonymization\Commands;
 use Arrilot\DataAnonymization\Anonymizer as CoreAnonymizer;
 use Arrilot\LaravelDataAnonymization\AbstractAnonymizer;
 use Arrilot\DataAnonymization\Database\SqlDatabase;
+use Faker\Generator as FakerGenerator;
 use Illuminate\Console\Command;
 use Illuminate\Console\ConfirmableTrait;
 use Symfony\Component\Console\Input\InputOption;
@@ -92,8 +93,9 @@ class DbAnonymizeCommand extends Command
         $db = $this->getDatabaseConfiguration($this->input->getOption('database'));
 
         $databaseInteractor = new SqlDatabase($db['dsn'], $db['username'], $db['password']);
+        $generator = $this->laravel->make(FakerGenerator::class);
 
-        return new CoreAnonymizer($databaseInteractor);
+        return new CoreAnonymizer($databaseInteractor, $generator);
     }
 
     /**
