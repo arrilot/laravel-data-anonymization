@@ -28,6 +28,8 @@ The package is designed to be as much consistent with Laravel built-in seeders a
 ```php
 <?php
 
+namespace Database\Anonymization;
+
 use Arrilot\LaravelDataAnonymization\AbstractAnonymizer;
 
 class DatabaseAnonymizer extends AbstractAnonymizer
@@ -50,11 +52,13 @@ class DatabaseAnonymizer extends AbstractAnonymizer
 ```php
 <?php
 
+namespace Database\Anonymization;
+
 use Arrilot\DataAnonymization\Blueprint;
 use Arrilot\LaravelDataAnonymization\AbstractAnonymizer;
 use Faker\Generator as Faker;
 
-class UserTableAnonymizer extends AbstractAnonymizer
+class UsersAnonymizer extends AbstractAnonymizer
 {
     /**
      * Run the database anonymization.
@@ -78,11 +82,11 @@ class UserTableAnonymizer extends AbstractAnonymizer
 ```
 
 `DatabaseAnonymizer` is an entry point into anonymization. It runs other anonymizers.
-`UserTableAnonymizer` is a useful built-in example. You can modify it and create other anonymizers for other table using generator.
+`UsersAnonymizer` is a useful built-in example. You can modify it and create other anonymizers for other tables using generator.
 
 ### Generator command
 
-`php artisan make:anonymizer ProfileTableAnonymizer`. Similar to `make:seeder`
+`php artisan make:anonymizer AccountsAnonymizer`. Similar to `make:seeder`
 
 ### Running the anonymization
 
