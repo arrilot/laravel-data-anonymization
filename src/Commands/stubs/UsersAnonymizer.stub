@@ -1,10 +1,12 @@
 <?php
 
+namespace Database\Anonymization;
+
 use Arrilot\DataAnonymization\Blueprint;
 use Arrilot\LaravelDataAnonymization\AbstractAnonymizer;
 use Faker\Generator as Faker;
 
-class UserTableAnonymizer extends AbstractAnonymizer
+class UsersAnonymizer extends AbstractAnonymizer
 {
     /**
      * Run the database anonymization.

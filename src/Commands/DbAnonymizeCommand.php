@@ -36,7 +36,7 @@ class DbAnonymizeCommand extends Command
     protected function getOptions()
     {
         return [
-            ['class', null, InputOption::VALUE_OPTIONAL, 'The class name of the root anonymizer', 'DatabaseAnonymizer'],
+            ['class', null, InputOption::VALUE_OPTIONAL, 'The class name of the root anonymizer', 'Database\\Anonymization\\DatabaseAnonymizer'],
 
             ['database', null, InputOption::VALUE_OPTIONAL, 'The database connection to anonymize'],
 

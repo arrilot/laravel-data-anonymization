@@ -30,26 +30,6 @@ class MakeAnonymizerCommand extends GeneratorCommand
     protected $type = 'Anonymizer';
 
     /**
-     * The Composer instance.
-     *
-     * @var \Illuminate\Support\Composer
-     */
-    protected $composer;
-
-    /**
-     * Create a new command instance.
-     *
-     * @param  \Illuminate\Filesystem\Filesystem  $files
-     * @param  \Illuminate\Support\Composer  $composer
-     */
-    public function __construct(Filesystem $files, Composer $composer)
-    {
-        parent::__construct($files);
-
-        $this->composer = $composer;
-    }
-
-    /**
      * Execute the console command.
      *
      * @return void
@@ -57,20 +37,6 @@ class MakeAnonymizerCommand extends GeneratorCommand
     public function handle()
     {
         parent::handle();
-
-        $this->composer->dumpAutoloads();
-    }
-
-    /**
-     * Execute the console command.
-     *
-     * @return void
-     */
-    public function fire()
-    {
-        parent::fire();
-
-        $this->composer->dumpAutoloads();
     }
 
     /**
@@ -95,12 +61,12 @@ class MakeAnonymizerCommand extends GeneratorCommand
     }
 
     /**
-     * Parse the name and format according to the root namespace.
+     * Parse the class name and format according to the root namespace.
      *
      * @param  string  $name
      * @return string
      */
-    protected function parseName($name)
+    protected function qualifyClass($name)
     {
         return $name;
     }

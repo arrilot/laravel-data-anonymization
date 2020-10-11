@@ -67,7 +67,7 @@ class AnonymizationInstallCommand extends Command
 
         $this->createDirectory($dir);
         $this->createAnonymizer($dir, 'DatabaseAnonymizer');
-        $this->createAnonymizer($dir, 'UserTableAnonymizer');
+        $this->createAnonymizer($dir, 'UsersAnonymizer');
 
         $this->composer->dumpAutoloads();
 

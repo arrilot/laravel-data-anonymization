@@ -10,9 +10,9 @@
 
 1. ```composer require arrilot/laravel-data-anonymization```
 
-2. Add `database/anonymizatio`n to `composer.json -> autoload -> classmap`
+2. Add `"Database\\Anonymization\\": "database/anonymization/",` to `composer.json -> autoload -> psr-4`
 
-3. `php artisan anonymization:install`
+4. `php artisan anonymization:install`
 
 
 ## Usage

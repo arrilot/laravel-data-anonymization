@@ -1,7 +1,10 @@
 <?php
 
+namespace Database\Anonymization;
+
 use Arrilot\DataAnonymization\Blueprint;
 use Arrilot\LaravelDataAnonymization\AbstractAnonymizer;
+use Faker\Generator as Faker;
 
 class DummyClass extends AbstractAnonymizer
 {
