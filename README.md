@@ -4,7 +4,7 @@
 
 # Laravel Data Anonymization
 
-* This is a bridge package for a full integration of `arrilot/data-anonymization` into Laravel framework.
+* This is a bridge package for a full integration of [arrilot/data-anonymization](https://github.com/arrilot/data-anonymization) into Laravel framework.
 
 ## Installation
 
